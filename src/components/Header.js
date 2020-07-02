@@ -3,8 +3,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import styled, {createGlobalStyle} from 'styled-components';
 import logoImg from '../asset/Logo.png';
 
+
 const Globalstyle = createGlobalStyle`
-    body {
+    * {
+        box-sizing: border-box;
+    }
+    body,h1,h2 {
         margin: 0;
         padding: 0;
     }
@@ -32,7 +36,7 @@ const CategoryItem = styled.li`
 
 const HaederContain = styled.div`
     display: flex;
-    max-width: 1366px;
+    max-width: 1440px;
     margin: 0 auto;
     background-color: #fff;
     padding-top: 30px;
@@ -44,6 +48,7 @@ const HaederContain = styled.div`
 
 const CategoryList = styled.ul`
     display:flex;
+    margin-right:30px;
 `;
 
 const Logo = styled.div`
@@ -55,22 +60,21 @@ const Logo = styled.div`
 const Navigation = styled.div`
     width:100%;
     max-width:1263px;
+    overflow:hidden;
+    margin-right:20px;
     @media (max-width: 768px) {
         display:none;
       }
 `;
 
-const category = [
-    'TECHNOLOGY',
-    'IDEAS',
-    'LEADERSHIP',
-    'VIDEO',
-    'NEWS',
-    'FINANCE',
-    'ENTERTAINMENT'
-]
+const Menu = styled.div`
+      margin-left:auto;
+      margin-right:20px;
+`;
 
-const Header = () => {
+
+
+const Header = props => {
     const [ selected , setSelected ] = useState('');
 
     return (
@@ -79,7 +83,7 @@ const Header = () => {
             <Logo onClick={() => setSelected('')}><img src={logoImg} alt='logo' /></Logo>
             <Navigation>
                 <CategoryList>
-                    {category.map( cat => (
+                    {props.category.map( cat => (
                         <CategoryItem 
                             key={cat}
                             onClick={()=> setSelected(cat)}
@@ -90,9 +94,9 @@ const Header = () => {
                         ))}
                 </CategoryList>
             </Navigation>
-            <div style={{marginRight:'30px'}}>
+            <Menu>
                 <MenuIcon />
-            </div>
+            </Menu>
         </HaederContain>
     )
 }
