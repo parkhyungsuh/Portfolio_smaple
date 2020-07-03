@@ -10,17 +10,34 @@ import sampleImg07 from '../asset/sampleImg_07.png';
 import sampleImg08 from '../asset/sampleImg_08.png';
 import sampleImg09 from '../asset/sampleImg_09.png';
 
-const MainContainer =styled.section`
+const MainContainer = styled.section`
     max-width: 1440px;
     width: 100%;
     margin: 0 auto;
     display:flex;
     flex-flow: column wrap;
     height:2200px;
+    @media (max-width: 768px){
+            height:3300px;
+        }
+    @media (max-width: 480px){
+            height:6000px;
+    }
 `;
 const Article = styled.article`
     width:430px;
     margin: 0 15px;
+    @media (max-width: 768px){
+       max-width: 430px;
+       width:50%;
+       margin: 0;
+       padding: 0 15px;
+    }
+    @media (max-width: 480px){
+        width:100%;
+        margin: 0 auto;
+        padding:0;
+    }
 `;
 const ArticleThumbnail = styled.figure`
     margin:0;
