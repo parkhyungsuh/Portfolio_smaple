@@ -18,6 +18,22 @@ const Globalstyle = createGlobalStyle`
         list-style:none;
     }
 `;
+const HaederContain = styled.header`
+    width: 100%;
+    border-bottom:1px solid #ebebeb;
+    margin-bottom: 40px;
+    .HeaderContainbox {
+        display: flex;
+        max-width: 1440px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding-top: 30px;
+        padding-bottom:30px;
+    }
+    @media (max-width: 768px) {
+        justify-content: space-between;
+      }
+    `;
 
 const CategoryItem = styled.li`
     color: #bbb;
@@ -34,17 +50,7 @@ const CategoryItem = styled.li`
 `;
 
 
-const HaederContain = styled.div`
-    display: flex;
-    max-width: 1440px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding-top: 30px;
-    padding-bottom:30px;
-    @media (max-width: 768px) {
-        justify-content: space-between;
-      }
-    `;
+
 
 const CategoryList = styled.ul`
     display:flex;
@@ -78,25 +84,27 @@ const Header = props => {
     const [ selected , setSelected ] = useState('');
 
     return (
-        <HaederContain as="header">
-            <Globalstyle />
-            <Logo onClick={() => setSelected('')}><img src={logoImg} alt='logo' /></Logo>
-            <Navigation>
-                <CategoryList>
-                    {props.category.map( cat => (
-                        <CategoryItem 
-                            key={cat}
-                            onClick={()=> setSelected(cat)}
-                            className={cat === selected && 'active'}
-                        >
-                            {cat}
-                        </CategoryItem>
-                        ))}
-                </CategoryList>
-            </Navigation>
-            <Menu>
-                <MenuIcon />
-            </Menu>
+        <HaederContain>
+            <div className="HeaderContainbox">
+                <Globalstyle />
+                <Logo onClick={() => setSelected('')}><img src={logoImg} alt='logo' /></Logo>
+                <Navigation>
+                    <CategoryList>
+                        {props.category.map( cat => (
+                            <CategoryItem 
+                                key={cat}
+                                onClick={()=> setSelected(cat)}
+                                className={cat === selected && 'active'}
+                            >
+                                {cat}
+                            </CategoryItem>
+                            ))}
+                    </CategoryList>
+                </Navigation>
+                <Menu>
+                    <MenuIcon />
+                </Menu>
+            </div>
         </HaederContain>
     )
 }
