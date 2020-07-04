@@ -8,23 +8,33 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 
 
 
-const FooterContainer = styled.div`
+const FooterContainer = styled.footer`
     background-color: #1d1f24;
-    .FooterContainerBox {
-        max-width:1440px;
+    
+`;
+const FooterContainerBox = styled.div `{
+        width:1440px;
         margin:0 auto;
         min-height:160px;
         display:flex;
         flex-wrap: wrap;
+        @media (max-width:768px) and (min-width:480px){
+            width:768px;
+        }
+        @media (max-width:480px) {
+            width:100%;
+            max-width:480px;
+        }
     }
 `;
+
 const Copyright = styled.div`
     width:180px;
     margin-left: 35px;
     color: #eee;
     font-size:12px;
     padding-top:40px;
-    @media (max-width:753px){
+    @media (max-width:768px){
         margin-left:20px;
     }
 `;
@@ -36,46 +46,48 @@ const Sitemap = styled.div`
     display:flex;
     flex-flow: row wrap;
     padding: 50px 0 40px 80px;
-    @media (max-width: 1015px ){
-        width:auto;
-        max-width:600px;
+    @media (max-width:768px) and (min-width:480px) {
+        width:568px;
     }
-    @media (max-width:753px){
+    @media (max-width:480px){
+        width: 100%;
         padding-top:0;
         padding-left:20px;
         order:1;
     }
 `;
 const SitemapItem = styled.div`
-    max-width:200px;
-    width:25%;
+    width:200px;
     font-size:13px;
     font-weight: 600;
     margin-bottom: 20px;
     color: #fff;
-    @media (max-width: 1355px) {
+    @media (max-width: 768px) and (min-width:480px) {
         width:33%;
+    }
+    @media (max-width:480px) {
+        width: 50%;
     }
 `;
 const Community = styled.div`
     min-width: 300px;
     margin-left:auto;
     margin-right:40px;
-    @media (max-width: 1355px) {
+    @media (max-width:768px) and (min-width:480px) {
+        margin-top:20px;
         margin-right: auto;
         margin-left 40px;
         display:flex;
         flex-flow:row-reverse wrap;
         padding-bottom: 50px
     }
-    @media (max-width:753px){
-        margin-top:20px;
-        margin-left:20px;
-        margin-right:0;
-    }
-    @media (max-width:605px){
+    @media (max-width:480px){
+        display:flex;
+        max-width:480px;
         width:100%;
         flex-flow: row wrap;
+        margin-bottom: 20px;
+        margin-top:15px;
     }
 `;
 const CommunitySocial = styled.div`
@@ -83,7 +95,7 @@ const CommunitySocial = styled.div`
     display:flex;
     flex-flow: row-reverse wrap;
     color: #ddd;
-    @media (max-width: 1355px) {
+    @media (max-width:768px) and (min-width:480px)  {
         margin-top:0;
         flex-flow: row-reverse nowrap;
         padding-top: 5px;
@@ -91,8 +103,9 @@ const CommunitySocial = styled.div`
             margin-left:20px;
         }
     }
-    @media (max-width:753px){
+    @media (max-width:480px){
         padding-top: 10px;
+        margin: 0 0 0 20px;
         order:1;
     }
 `;
@@ -105,10 +118,14 @@ const CommunitySubscribe = styled.div`
     width:300px;
     height:35px;
     display:flex;
-    @media (max-width: 1355px) {
+    @media (max-width: 768px) and (min-width:480px) {
         margin-top:0;
         margin-right:30px;
     }
+    @media (max-width:480px) {
+        margin: 0 0 0 20px;
+    }
+
 `;
 const CommunitySubscribeInput = styled.input`
     width:180px;
@@ -129,7 +146,7 @@ const CommunitySubscribeBotton = styled.button`
 const Footer = (props) => {
     return (
         <FooterContainer>
-            <div className="FooterContainerBox">
+            <FooterContainerBox>
                 <Copyright>
                     <div>
                         <img src={logoImg} alt="logo" />
@@ -162,7 +179,7 @@ const Footer = (props) => {
                         <CommunitySubscribeBotton>SUBSCRIBE</CommunitySubscribeBotton>
                     </CommunitySubscribe>
                 </Community>
-            </div>
+            </FooterContainerBox>
         </FooterContainer>
     )
 }

@@ -11,23 +11,25 @@ import sampleImg08 from '../asset/sampleImg_08.png';
 import sampleImg09 from '../asset/sampleImg_09.png';
 
 const MainContainer = styled.section`
-    max-width: 1440px;
-    width: 100%;
+    width: 1440px;
     margin: 0 auto;
     display:flex;
     flex-flow: column wrap;
     height:2200px;
-    @media (max-width: 768px){
-            height:3300px;
+    @media (max-width: 768px) and (min-width:480px){
+        width:768px;
+        height:3300px;
         }
     @media (max-width: 480px){
-            height:6000px;
+        max-width:480px;
+        width:100%;
+        height:6000px;
     }
 `;
 const Article = styled.article`
     width:430px;
     margin: 0 15px;
-    @media (max-width: 768px){
+    @media (max-width: 768px) and (min-width:480px){
        max-width: 430px;
        width:50%;
        margin: 0;
@@ -36,7 +38,7 @@ const Article = styled.article`
     @media (max-width: 480px){
         width:100%;
         margin: 0 auto;
-        padding:0;
+        padding:0 5px;;
     }
 `;
 const ArticleThumbnail = styled.figure`

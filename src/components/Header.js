@@ -12,10 +12,26 @@ const Globalstyle = createGlobalStyle`
         margin: 0;
         padding: 0;
     }
+
+    body{
+        width: 100%;
+        min-width:1440px;
+    }
     ul,li {
         margin:0;
         paading:0;
         list-style:none;
+    }
+    @media (max-width: 768px) and (min-width:480px){
+        body {
+            min-width: 768px;
+        }
+    }
+    @media (max-width: 480px) {
+        body {
+            min-width:auto;
+            max-width:768px;
+        }
     }
 `;
 const HaederContain = styled.header`
@@ -24,11 +40,18 @@ const HaederContain = styled.header`
     margin-bottom: 40px;
     .HeaderContainbox {
         display: flex;
-        max-width: 1440px;
+        width: 1440px;
         margin: 0 auto;
         background-color: #fff;
         padding-top: 30px;
         padding-bottom:30px;
+        @media (max-width: 768px) and (min-width:480px) {
+            width:768px;
+          }
+        @media (max-width: 480px) {
+            max-width:480px;
+            width:100%;
+        }
     }
     @media (max-width: 768px) {
         justify-content: space-between;
