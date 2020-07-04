@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import sampleImg01 from '../asset/sampleImg_01.png';
-import sampleImg02 from '../asset/sampleImg_02.png';
-import sampleImg03 from '../asset/sampleImg_03.png';
-import sampleImg04 from '../asset/sampleImg_04.png';
-import sampleImg05 from '../asset/sampleImg_05.png';
-import sampleImg06 from '../asset/sampleImg_06.png';
-import sampleImg07 from '../asset/sampleImg_07.png';
-import sampleImg08 from '../asset/sampleImg_08.png';
-import sampleImg09 from '../asset/sampleImg_09.png';
+import sampleImg01 from '../asset/main/sampleImg_01.png';
+import sampleImg02 from '../asset/main/sampleImg_02.png';
+import sampleImg03 from '../asset/main/sampleImg_03.png';
+import sampleImg04 from '../asset/main/sampleImg_04.png';
+import sampleImg05 from '../asset/main/sampleImg_05.png';
+import sampleImg06 from '../asset/main/sampleImg_06.png';
+import sampleImg07 from '../asset/main/sampleImg_07.png';
+import sampleImg08 from '../asset/main/sampleImg_08.png';
+import sampleImg09 from '../asset/main/sampleImg_09.png';
 
 const MainContainer = styled.section`
     width: 1440px;
-    margin: 0 auto;
+    margin: 40px auto 0;
     display:flex;
     flex-flow: column wrap;
     height:2200px;

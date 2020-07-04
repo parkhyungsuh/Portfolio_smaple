@@ -47,12 +47,11 @@ const Globalstyle = createGlobalStyle`
 const HaederContain = styled.header`
     width: 100%;
     border-bottom:1px solid #ebebeb;
-    margin-bottom: 40px;
+    background-color: #fff;
     .HeaderContainbox {
         display: flex;
         width: 1440px;
         margin: 0 auto;
-        background-color: #fff;
         padding-top: 30px;
         padding-bottom:30px;
         @media (max-width: 768px) and (min-width:480px) {
