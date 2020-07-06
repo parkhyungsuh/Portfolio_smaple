@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link } from 'react-router-dom';
 import styled from 'styled-components';
 import mainImg from '../asset/leadership/leadership.png';
 
@@ -132,7 +133,7 @@ const Leadership = () => {
                      us that makess astronomy so mu
                      ch fun. The universe is a constantly changing and moving.
                     </p>
-                    <a href="/" className="botton">READ MORE</a>
+                    <Link to="/post" className="botton">READ MORE</Link>
                 </MainImgTypoBox>
             </MainImgContainer>
             <LeadershipContent>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 import sampleImg01 from '../asset/main/sampleImg_01.png';
 import sampleImg02 from '../asset/main/sampleImg_02.png';
 import sampleImg03 from '../asset/main/sampleImg_03.png';
@@ -60,10 +61,12 @@ const ArticleCategory = styled.div`
 const ArticleTitle = styled.h3`
     margin: 30px 0 0 0;
     font-size: 2rem;
+    color:#000;
 `;
 const ArticleSubtitle = styled.p`
     margin: 20px 0 65px 0;
-    font-size: 1.5rem
+    font-size: 1.5rem;
+    color:#444;
 `;
 const data = [
     {
@@ -134,20 +137,22 @@ const Main = () => {
     return (
         <MainContainer>
             {data.map( data => (
-                <Article key={data.idx}>
-                    <ArticleThumbnail>
-                        <ArticleThumbImg src={data.imgUrl} alt="thumbnail" />
-                        <ArticleCategory>
-                            {data.category}
-                        </ArticleCategory>
-                    </ArticleThumbnail>
-                    <ArticleTitle>
-                        {data.title}
-                    </ArticleTitle>
-                    <ArticleSubtitle>
-                        {data.subTitle}
-                    </ArticleSubtitle>
-                </Article>
+                <Link to="/post" key={data.idx}>
+                    <Article>
+                        <ArticleThumbnail>
+                            <ArticleThumbImg src={data.imgUrl} alt="thumbnail" />
+                            <ArticleCategory>
+                                {data.category}
+                            </ArticleCategory>
+                        </ArticleThumbnail>
+                        <ArticleTitle>
+                            {data.title}
+                        </ArticleTitle>
+                        <ArticleSubtitle>
+                            {data.subTitle}
+                        </ArticleSubtitle>
+                    </Article>
+                </Link>
             ))}
         </MainContainer>
     )

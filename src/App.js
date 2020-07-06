@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Main from './components/Main';
 import VedioGallery from './components/VedioGallery';
 import Leadership from './components/Leadership';
+import Post from './components/Post';
 
 const category = [
   'TECHNOLOGY',
@@ -25,6 +26,9 @@ const App = () => {
         </Route>
         <Route  path="/LEADERSHIP">
           <Leadership />
+        </Route>
+        <Route path="/post">
+          <Post />
         </Route>
         <Route  path="/">
           <Main/>
